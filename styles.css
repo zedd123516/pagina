@@ -1,536 +1,529 @@
 :root{
-    --main-c:#FFC300;
-    --black-c:#000;
-  }
-  
-  /** Estilos Generales **/
-  html{
-    font-family: 'Josefin Sans', sans-serif;
-  }
-  body{
-    margin: 0;
-    padding: 0;
-  }
-  a{
-    text-decoration: none;
-  }
-  a:visited{
-    color: inherit;
-  }
-  li{
-    list-style: none;
-  }
-  p{
-    font-size: 1.1rem;
-  }
-  h1{
-    font-size: 2.4rem;
-  }
-  h2{
-    font-size: 2rem;
-  }
-  h3{
-    font-size: 1.8rem;
-  }
-  h4{
-    font-size: 1.6rem;
-  }
-  h5{
-    font-size: 1.4rem;
-  }
-  h6{
-    font-size: 1.2rem;
-  }
+  --main-c:#FFC300; /* Color principal (amarillo dorado) */
+  --black-c:#000; /* Color negro */
+}
 
-  /* Enlaces y botones */
+/** Estilos Generales **/
+html{
+  font-family: 'Josefin Sans', sans-serif; /* Establece la fuente para todo el documento */
+}
+body{
+  margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+  padding: 0; /* Elimina los rellenos predeterminados del cuerpo */
+}
+a{
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+a:visited{
+  color: inherit; /* Los enlaces visitados no cambian de color */
+}
+li{
+  list-style: none; /* Elimina los puntos de las listas */
+}
+p{
+  font-size: 1.1rem; /* Define el tamaño de la fuente para los párrafos */
+}
+h1{
+  font-size: 2.4rem; /* Tamaño de fuente para el encabezado h1 */
+}
+h2{
+  font-size: 2rem; /* Tamaño de fuente para el encabezado h2 */
+}
+h3{
+  font-size: 1.8rem; /* Tamaño de fuente para el encabezado h3 */
+}
+h4{
+  font-size: 1.6rem; /* Tamaño de fuente para el encabezado h4 */
+}
+h5{
+  font-size: 1.4rem; /* Tamaño de fuente para el encabezado h5 */
+}
+h6{
+  font-size: 1.2rem; /* Tamaño de fuente para el encabezado h6 */
+}
 
-  .cta-main{
-    background-color: var(--main-c);
-    padding: 1rem 1rem;
-    color: #fff;
-    font-size: bold;
-    border-radius: 4px;
+/* Estilos de Enlaces y Botones */
+.cta-main{
+  background-color: var(--main-c); /* Fondo amarillo dorado */
+  padding: 1rem 1rem; /* Relleno dentro del botón */
+  color: #fff; /* Color del texto blanco */
+  font-size: bold; /* Texto en negrita */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Header Restaurante */
+header.main-header{
+  position: relative; /* Posición relativa del encabezado */
+  top: 0;
+  width: 100%;
+  z-index:9999; /* Asegura que el encabezado quede encima de otros elementos */
+}
+.header-wrap{
+  display: flex; /* Usando flexbox para distribuir los elementos */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  padding: 1rem; /* Relleno alrededor de la cabecera */
+  background-color: transparent; /* Fondo transparente */
+  z-index: 999; /* Z-index para el contenido */
+}
+.wrap-logo-header{
+  display: flex;
+  align-items: center; /* Alinea los elementos del logo verticalmente */
+  flex-basis: 15%; /* Usa el 15% del espacio disponible */
+}
+.logo-header{
+  font-weight: bold; /* Negrita en el logo */
+  font-size: 1.2rem; /* Tamaño de la fuente del logo */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Menú en el Header */
+.nav-header{
+  display: flex; /* Flexbox para el menú de navegación */
+  align-items: center; /* Alinea verticalmente los elementos */
+  width: 100%;
+}
+.nav-wrap-header{
+  display: flex;
+  flex-basis: 50%; /* Usando el 50% del espacio disponible */
+}
+
+ul.main-menu{
+  display: flex; /* Flexbox para el menú */
+  width: 100%;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between; /* Espaciado entre los elementos */
+  align-items: center; /* Alineación vertical */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+}
+
+ul.main-menu #nav-main-contact{
+  display: flex;
+  align-items: center; /* Alineación de los elementos */
+  padding: .5rem 1rem; /* Relleno del enlace de contacto */
+  background-color: var(--main-c); /* Fondo del enlace de contacto */
+  color: #fff; /* Texto blanco */
+}
+li.menu-item{
+  margin: .75rem; /* Margen alrededor de cada elemento de lista */
+  display: flex;
+}
+li.menu-item a{
+  padding: .5rem 1rem; /* Relleno en los enlaces de los elementos */
+  color: #fff; /* Texto blanco */
+}
+li.menu-item a:hover{
+  color: var(--main-c); /* Cambio de color al pasar el ratón */
+}
+
+i.toggle-menu img {
+  width: 27px; /* Tamaño del icono de menú */
+  z-index: 99;
+}
+
+i.toggle-menu{
+  display: none; /* Menú oculto por defecto */
+  background-color: #fff; /* Fondo blanco para el menú */
+  border: none;
+  z-index: 9999;
+}
+
+input#check{
+  display: none; /* Esconde el input del menú móvil */
+}
+
+/* Media Queries */
+@media (min-width:880px){
+  .header-wrap{
+      padding: .5rem 5rem; /* Aumenta el relleno en pantallas grandes */
   }
+}
 
-  /* Header Restaurante */
+@media (min-width:768px){
+  a.logo-header{
+      color: #fff; /* Logo blanco en pantallas medianas */
+  }
+}
 
-    header.main-header{
-    position: relative;    
-    top: 0;
-    width: 100%;
-    z-index:9999;
+@media (max-width:768px){
+  header.main-header{
+      margin-bottom: 4rem; /* Espacio en la parte inferior del encabezado */
   }
   .header-wrap{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: transparent;
-    z-index: 999;
-  }
-  .wrap-logo-header{
-    display: flex;
-    align-items: center;
-    flex-basis: 15%;
-  }
-  .logo-header{
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #fff;
-  }
-  
-  /* menu header */
-  
-  .nav-header{
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  .nav-wrap-header{
-    display: flex;
-    flex-basis: 50%;
-  }
-  
-  ul.main-menu{
-    display: flex;
-    width: 100%;
-    z-index: 99;
-    margin: 0;
-    padding: 0;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-  }
-  
-  ul.main-menu #nav-main-contact{
-    display: flex;
-    align-items: center;
-    padding: .5rem 1rem;
-    background-color: var(--main-c);
-    color: #fff;
-  }
-  li.menu-item{
-    margin: .75rem;
-    display: flex;
-  }
-  li.menu-item a{
-    padding: .5rem 1rem;
-    color: #fff;
-  }
-  li.menu-item a:hover{
-    color: var(--main-c);
-  }
-  
-  i.toggle-menu img {
-    width: 27px;
-    z-index: 99;
-  }
-  
-  i.toggle-menu{
-    display: none;
-    background-color: #fff;
-    border: none;
-    z-index: 9999;
-  }
-  
-  input#check{
-    display: none;
-  }
-  
-  @media (min-width:880px){
-    .header-wrap{
-      padding: .5rem 5rem;
-    }
-  }
-  
-  /* Cuando este en pantalla pequeña se muestre el logo en color blanco  */
-  @media (min-width:768px){
-    a.logo-header{
-      color: #fff;
-    }
-  }
-  
-  @media (max-width:768px){
-    header.main-header{
-      margin-bottom: 4rem;
-    }
-    .header-wrap{
-      position: fixed;
+      position: fixed; /* Fija la cabecera en la parte superior */
       width: 100%;
       background-color: #fff;
       padding: 0;
       top: 0;
       z-index: 9999;
-      height: 60px;
-    }
-    .wrap-logo-header{
+      height: 60px; /* Altura del encabezado en pantallas pequeñas */
+  }
+  .wrap-logo-header{
       position: fixed;
       z-index:999;
       top: 3%;
       left: 3%;
-    }
+  }
 
-    /* Clase logo, aplica a los enlaces de la lista  */
-    .logo-header, li.menu-item a{
-      color: #222;
-    }
-  
-    i.toggle-menu{
-      display: flex;
-    }
+  .logo-header, li.menu-item a{
+      color: #222; /* Color oscuro en el logo y enlaces */
+  }
 
-    /* Oculta el menú principal y el enlace de contacto,
-     eliminando márgenes y alineándolo a la izquierda. */
-    ul.main-menu,#nav-main-contact{
-      display: none;
-      left: 0;
-      margin: 0;
-      padding: 0;
-    }
-    ul.main-menu{
-      position: fixed;
-      background-color: #fff;
-    }
-    label.checkbtn{
+  i.toggle-menu{
+      display: flex; /* Muestra el icono del menú */
+  }
+
+  ul.main-menu,#nav-main-contact{
+      display: none; /* Esconde el menú y el contacto */
+  }
+
+  label.checkbtn{
       position: fixed;
       right: 3%;
       top: 3%;
       z-index: 9999;
-      cursor: pointer;
-    }
+      cursor: pointer; /* Hace el icono clickeable */
+  }
 
-    /* Se despliegue el menu
-    todos los elemenos del menu */
-    #check:checked ~ ul{
-      display: flex;
+  #check:checked ~ ul{
+      display: flex; /* Muestra el menú cuando el checkbox está marcado */
       z-index: 9;
       flex-flow: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      height: 100vh; /* Menú desplegable a pantalla completa */
       top: 0;
-      font-size: 2rem; 
-    }
+      font-size: 2rem;
   }
-
-
+}
 
 /* Hero Section HomePage */
 .wrap-header-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), 
-                url("img.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh; /* O 90vh según prefieras */
-  }
-  
-  .hero-home-page {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), 
+              url("img.jpg"); /* Fondo con gradiente y una imagen */
+  background-size: cover; /* La imagen cubre todo el área */
+  background-repeat: no-repeat;
+  background-position: center; /* Centra la imagen de fondo */
+  height: 100vh; /* Altura completa de la pantalla */
+}
+
+.hero-home-page {
+  height: 100%; /* Altura completa del contenedor */
+  display: flex; /* Flexbox para centrar el contenido */
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap-hero-home-page {
+  color: #fff; /* Texto blanco */
+  text-align: center;
+  width: 50%; /* Ancho del 50% del contenedor */
+  padding: 2rem; /* Relleno alrededor del texto */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+.wrap-hero-home-page p {
+  margin-bottom: 2rem; /* Margen inferior en el párrafo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .wrap-hero-home-page {
-    color: #fff;
-    text-align: center;
-    width: 50%;
-    padding: 2rem; /* Agregado para mejor legibilidad */
-    margin: 0 auto;
-  }
-  
-  .wrap-hero-home-page p {
-    margin-bottom: 2rem;
-  }
-  
-  /* Responsive */
-
-  @media (max-width: 768px) {
-    .wrap-hero-home-page {
-      width: 90%; /* Mejor ajuste para móviles */
-      padding: 1rem;
-    }
-  
-    .hero-home-page {
-      height: auto;
-      padding: 3rem 0; /* Ajuste para evitar contenido demasiado grande */
-    }
+      width: 90%; /* Ajuste del ancho para pantallas pequeñas */
+      padding: 1rem; /* Menos relleno en móviles */
   }
 
-  /* Tarjetas de Comida */
+  .hero-home-page {
+      height: auto; /* Ajusta la altura para evitar que se corte el contenido */
+      padding: 3rem 0;
+  }
+}
+
 /* Tarjetas de Comida */
 .section{
-    max-width: 1200px;
-    margin: 8rem auto;
-    padding: 1rem;
-  }
-  
+  max-width: 1200px; /* Ancho máximo de la sección */
+  margin: 8rem auto; /* Margen superior e inferior */
+  padding: 1rem; /* Relleno en la sección */
+}
+
+.column-4{
+  display: grid; /* Usa grid para organizar las tarjetas */
+  grid-template-columns: repeat(4,1fr); /* 4 columnas de igual tamaño */
+  column-gap: 1rem; /* Espacio entre columnas */
+  row-gap: 1rem; /* Espacio entre filas */
+}
+
+.tarjeta-rest{
+  background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+  height: 400px; /* Altura fija de la tarjeta */
+  border-radius: 6px; /* Bordes redondeados */
+  padding: 1rem .5rem; /* Relleno dentro de la tarjeta */
+  display: flex; /* Flexbox para alinear el contenido */
+  align-items: end; /* Alinea el contenido al fondo */
+}
+
+.wrap-text_tarjeta-rest{
+  color: #fff; /* Texto blanco */
+  padding: .5rem; /* Relleno alrededor del texto */
+  border-radius: 6px;
+  background:linear-gradient(to top, rgb(0 0 0 / .5), rgb(0 0 0 / .5)); /* Fondo oscuro con gradiente */
+}
+
+.wrap-text_tarjeta-rest p{
+  color: #f2f2f2; /* Color gris claro para el texto */
+}
+
+.cta-wrap_tarjeta-rest{
+  display: flex;
+  justify-content: space-between; /* Espaciado entre los elementos */
+}
+
+.precio_tarjeta-rest span{
+  font-size: 1.5rem; /* Tamaño del precio */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.cta_tarjeta-rest{
+  background-color: var(--main-c); /* Fondo amarillo dorado */
+  padding: .25rem 1rem;
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+.cta_tarjeta-rest a{
+  color: #fff; /* Texto blanco */
+  font-weight: bold;
+}
+
+@media (max-width:1200px){
   .column-4{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    column-gap: 1rem;
-    row-gap: 1rem;
+      grid-template-columns: repeat(3,1fr); /* 3 columnas en pantallas medianas */
   }
-  
-  .tarjeta-rest{
-    background-repeat: no-repeat;
-    height: 400px;
-    border-radius: 6px;
-    padding: 1rem .5rem;
-    display: flex;
-    align-items: end;
+}
+
+@media (max-width:880px){
+  .column-4{
+      grid-template-columns: repeat(2,1fr); /* 2 columnas en pantallas pequeñas */
   }
-  .wrap-text_tarjeta-rest{
-    color: #fff;
-    padding: .5rem;
-    border-radius: 6px;
-    background:linear-gradient(to top, rgb(0 0 0 / .5), rgb(0 0 0 / .5));
+}
+
+@media (max-width:640px){
+  .column-4{
+      grid-template-columns: repeat(1,1fr); /* 1 columna en pantallas muy pequeñas */
   }
-  
-  .wrap-text_tarjeta-rest p{
-    color: #f2f2f2;
-  }
-  .cta-wrap_tarjeta-rest{
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .precio_tarjeta-rest span{
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .cta_tarjeta-rest{
-    background-color: var(--main-c);
-    padding: .25rem 1rem;
-    border-radius: 4px;
-  }
-  .cta_tarjeta-rest a{
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  @media (max-width:1200px){
-    .column-4{
-      grid-template-columns: repeat(3,1fr);
-    }
-  }
-  
-  @media (max-width:880px){
-    .column-4{
-      grid-template-columns: repeat(2,1fr);
-    }
-  }
-  
-  @media (max-width:640px){
-    .column-4{
-      grid-template-columns: repeat(1,1fr);
-    }
-  }
+}
 
 /* Menu Restaurante */
 .column-3{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 1rem;
-    row-gap: 1rem;
-  }
-  
-  .menu-restaurante{
-    color: #fff;
-    text-align: center;
-    background-repeat: no-repeat;
-    border-radius: 6px;
-    display: flex;
-    flex-flow: column;
-  }
-  hr{
-    background: var(--main-c);
-    height: 2px;
-    width: 30px;
-    border: none;
-  }
-  .precio-menu{
-    font-weight: bold;
-  }
-  .precio-menu span{
-    font-size: 2rem;
-  }
-  
-  @media (max-width:880px){
-    .column-3{
-      grid-template-columns: repeat(2,1fr);
-    }
-  }
-  @media (max-width:640px){
-    .column-3{
-      grid-template-columns: repeat(1,1fr);
-    }
-  }
+  display: grid;
+  grid-template-columns: repeat(3,1fr); /* 3 columnas */
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
 
-  /* Gerlía de Imágenes */
-  .imagen-galeria {
-    display: flex;
-    justify-content: center; /* Opcional: Centra las imágenes dentro de su contenedor */
-    align-items: center; /* Opcional: Centra las imágenes verticalmente dentro de su contenedor */
-    height: 200px; /* Establece la altura fija para el contenedor de la imagen */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+.menu-restaurante{
+  color: #fff; /* Texto blanco */
+  text-align: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  display: flex;
+  flex-flow: column; /* Organiza el contenido en columna */
+}
+
+hr{
+  background: var(--main-c); /* Color de la línea horizontal */
+  height: 2px;
+  width: 30px;
+  border: none;
+}
+
+.precio-menu{
+  font-weight: bold; /* Negrita en el precio */
+}
+
+.precio-menu span{
+  font-size: 2rem; /* Tamaño grande del precio */
+}
+
+@media (max-width:880px){
+  .column-3{
+      grid-template-columns: repeat(2,1fr); /* 2 columnas en pantallas medianas */
   }
-  
-  .imagen-galeria img {
-    width: 100%;       /* La imagen tomará todo el ancho del contenedor */
-    height: 100%;      /* La imagen tomará toda la altura del contenedor */
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
-    border-radius: 5%; /* Redondea los bordes de las imágenes */
+}
+@media (max-width:640px){
+  .column-3{
+      grid-template-columns: repeat(1,1fr); /* 1 columna en pantallas pequeñas */
   }
+}
 
 
-  /* Tarjetas de Blog */
-article.card{
-    max-width: 350px;
-    background-color: #f8f8f8;
-    margin: 1rem;
-    box-shadow: 0px 0px 12px #d7d7d7;
-  }
-  .header-card{
-    display: flex;
-  }
-  .header-card img{
-    border-radius: 8px 8px 0 0;
-    max-height: 200px;
-    height: 200px;
-    width: 100%;
-  }
-  
-  .categoria-card{
-    margin-top: 1rem;
-  }
-  
-  .categoria-card span{
-    background: var(--main-c);
-    border-radius: 4px;
-    padding: .2rem .5rem;
-    color: #fff;
-  }
-  
-  .card footer{
-    display: flex;
-    flex-flow: column;
-    padding: 0 1rem;
-  }
-  
-  .perfil-card{
-    display: flex;
-    align-items: center;
-  }
-  
-  .img-perfil-card{
-    display: flex;
-  }
-  
-  .img-perfil-card img{
-    width: 50px;
-    border-radius: 50%;
-    margin: 1rem 1rem 1rem 0;
-  }
-  .text-perfil-card{
-    display: flex;
-    flex-flow: column;
-  }
-  .text-perfil-card span:nth-child(2){
-    color: #cfcfcf; 
-  }
-  .card-wrap{
-    display: flex;
-    flex-flow: wrap;
-  }
-  
-  @media (max-width:768px){
-    .card-wrap{
-      justify-content: center;
-    }
-  }
+  /* Galería de Imágenes */
+.imagen-galeria {
+  display: flex; /* Hace que el contenedor de la imagen use flexbox */
+  justify-content: center; /* Opcional: Centra las imágenes dentro de su contenedor */
+  align-items: center; /* Opcional: Centra las imágenes verticalmente dentro de su contenedor */
+  height: 200px; /* Establece la altura fija para el contenedor de la imagen */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+}
 
-  /* Footer de la página */
+.imagen-galeria img {
+  width: 100%;       /* La imagen tomará todo el ancho del contenedor */
+  height: 100%;      /* La imagen tomará toda la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+  border-radius: 5%; /* Redondea los bordes de las imágenes */
+}
 
-footer{
-    background-color: #fff;
-    color: var(--black-c);
+/* Tarjetas de Blog */
+article.card {
+  max-width: 350px; /* Establece el ancho máximo de la tarjeta */
+  background-color: #f8f8f8; /* Color de fondo de la tarjeta */
+  margin: 1rem; /* Espacio alrededor de la tarjeta */
+  box-shadow: 0px 0px 12px #d7d7d7; /* Sombra de la tarjeta */
+}
+
+.header-card {
+  display: flex; /* Usa flexbox para alinear los elementos dentro del header */
+}
+
+.header-card img {
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior de la imagen */
+  max-height: 200px; /* Altura máxima de la imagen */
+  height: 200px; /* Altura de la imagen */
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+}
+
+.categoria-card {
+  margin-top: 1rem; /* Espacio superior de la categoría */
+}
+
+.categoria-card span {
+  background: var(--main-c); /* Fondo del span con el color principal */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: .2rem .5rem; /* Espaciado interno del span */
+  color: #fff; /* Color del texto dentro del span */
+}
+
+.card footer {
+  display: flex; /* Usa flexbox en el footer de la tarjeta */
+  flex-flow: column; /* Organiza los elementos en columna */
+  padding: 0 1rem; /* Espaciado interno en el footer */
+}
+
+.perfil-card {
+  display: flex; /* Usa flexbox para alinear los elementos dentro del perfil */
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.img-perfil-card {
+  display: flex; /* Usa flexbox para alinear las imágenes de perfil */
+}
+
+.img-perfil-card img {
+  width: 50px; /* Ancho de la imagen de perfil */
+  border-radius: 50%; /* Hace la imagen circular */
+  margin: 1rem 1rem 1rem 0; /* Espaciado alrededor de la imagen */
+}
+
+.text-perfil-card {
+  display: flex; /* Usa flexbox para organizar el texto */
+  flex-flow: column; /* Organiza los elementos de texto en columna */
+}
+
+.text-perfil-card span:nth-child(2) {
+  color: #cfcfcf; /* Color del segundo elemento de texto */
+}
+
+.card-wrap {
+  display: flex; /* Usa flexbox para envolver las tarjetas */
+  flex-flow: wrap; /* Permite que las tarjetas se ajusten al contenedor */
+}
+
+@media (max-width:768px) {
+  .card-wrap {
+    justify-content: center; /* Centra las tarjetas cuando el tamaño de pantalla es pequeño */
   }
-  
-  footer ul{
-    padding: 0;
+}
+
+/* Footer de la página */
+footer {
+  background-color: #fff; /* Fondo blanco para el footer */
+  color: var(--black-c); /* Color del texto en el footer */
+}
+
+footer ul {
+  padding: 0; /* Elimina el padding de los ul */
+}
+
+.wrap-footer {
+  display: grid; /* Usa una cuadrícula para organizar los elementos */
+  grid-template-columns: 30% 15% 15% 20%; /* Define el tamaño de las columnas */
+  column-gap: 5%; /* Espacio entre las columnas */
+  padding: 1rem; /* Espaciado interno */
+  margin: 2rem auto; /* Espaciado fuera del contenedor */
+  max-width: 1200px; /* Ancho máximo del footer */
+}
+
+element-footer h5 {
+  margin: 1rem 0; /* Espacio arriba y abajo de los títulos en el footer */
+}
+
+.text-element-footer {
+  line-height: 2; /* Altura de línea para el texto en el footer */
+}
+
+.text-element-footer li a {
+  color: var(--main-c); /* Color de los enlaces en el footer */
+}
+
+.rrss-element-footer ul {
+  display: flex; /* Usa flexbox para organizar los elementos */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+}
+
+.rrss-element-footer img {
+  width: 45px; /* Tamaño de las imágenes de las redes sociales */
+}
+
+.rrss-element-footer li {
+  margin-right: 1rem; /* Espacio a la derecha de cada ítem en las redes sociales */
+}
+
+.footer-creds {
+  display: flex; /* Usa flexbox para alinear los elementos */
+  justify-content: space-between; /* Espacio entre los elementos */
+  padding: 0 1rem; /* Espaciado interno */
+  color: #576171; /* Color del texto */
+  font-size: .9rem; /* Tamaño de la fuente */
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+.legal-creds ul {
+  display: flex; /* Usa flexbox para los elementos legales */
+}
+
+.legal-creds ul li {
+  padding-right: 1rem; /* Espacio a la derecha de cada ítem legal */
+}
+
+.legal-creds ul li a {
+  color: #576171; /* Color de los enlaces legales */
+}
+
+@media (max-width:768px) {
+  .wrap-footer {
+    grid-template-columns: repeat(2, 1fr); /* Ajusta el número de columnas en pantallas más pequeñas */
   }
-  
-  .wrap-footer{
-    display: grid;
-    grid-template-columns: 30% 15% 15% 20%;
-    column-gap: 5%;
-    padding: 1rem;
-    margin: 2rem auto;
-    max-width: 1200px;
+}
+
+@media (max-width:480px) {
+  .wrap-footer {
+    grid-template-columns: repeat(1, 1fr); /* Solo una columna en pantallas muy pequeñas */
   }
-  
-  element-footer h5{
-    margin: 1rem 0;
+}
+
+@media (max-width:320px) {
+  .footer-creds {
+    flex-flow: column; /* Organiza los elementos del footer en columna en pantallas extremadamente pequeñas */
   }
-  
-  .text-element-footer{
-    line-height: 2;
-  }
-  
-  .text-element-footer li a{
-    color: var(--main-c);
-  }
-  
-  .rrss-element-footer ul{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .rrss-element-footer img{
-    width: 45px;
-  }
-  .rrss-element-footer li{
-    margin-right: 1rem;
-  }
-  
-  .footer-creds{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    color: #576171;
-    font-size: .9rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .legal-creds ul{
-    display: flex;
-  }
-  
-  .legal-creds ul li{
-    padding-right: 1rem;
-  }
-  
-  .legal-creds ul li a{
-    color: #576171;
-  }
-  
-  @media (max-width:768px){
-    .wrap-footer{
-      grid-template-columns: repeat(2,1fr);
-    }
-  }
-  
-  @media (max-width:480px){
-    .wrap-footer{
-      grid-template-columns: repeat(1,1fr);
-    }
-  }
-  
-  @media (max-width:320px){
-    .footer-creds{
-      flex-flow: column;
-    }
-  }
+}
