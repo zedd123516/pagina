@@ -133,7 +133,8 @@ input#check{
   display: none; /* Esconde el input del menú móvil */
 }
 
-/* Media Queries */
+/* Media Para que se ajuste en el dispositivo que se esta viendo */
+
 @media (min-width:880px){
   .header-wrap{
       padding: .5rem 5rem; /* Aumenta el relleno en pantallas grandes */
@@ -510,6 +511,7 @@ element-footer h5 {
   color: #576171; /* Color de los enlaces legales */
 }
 
+/* Media Para que se ajuste en el dispositivo que se esta viendo */
 @media (max-width:768px) {
   .wrap-footer {
     grid-template-columns: repeat(2, 1fr); /* Ajusta el número de columnas en pantallas más pequeñas */
